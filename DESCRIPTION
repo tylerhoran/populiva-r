@@ -1,0 +1,27 @@
+Package: populiva
+Title: Client for the 'Populiva' Research Participant API
+Version: 0.1.0
+Authors@R: c(
+    person("Tyler", "Horan", email = "tyler@populiva.com", role = c("aut", "cre")),
+    person("Digion Inc", role = c("cph", "fnd"))
+  )
+Description: Create, launch and manage online studies on 'Populiva'
+    <https://populiva.com>, a research participant platform. Review
+    submissions, pay bonuses, manage participant groups and issue signed
+    provenance reports from R, and get results back as data frames that join
+    to your survey or experiment data by participant ID. Wraps the researcher
+    API documented at <https://populiva.com/developers>.
+License: MIT + file LICENSE
+URL: https://populiva.com/developers, https://github.com/tylerhoran/populiva-r
+BugReports: https://github.com/tylerhoran/populiva-r/issues
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Imports:
+    httr2 (>= 1.1.0)
+Suggests:
+    testthat (>= 3.0.0),
+    withr,
+    jsonlite
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.1
