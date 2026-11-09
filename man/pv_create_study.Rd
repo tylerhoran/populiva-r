@@ -46,8 +46,11 @@ Other screeners include \code{race_ethnicity}, \code{education}, \code{party_id}
 values.}
 
 \item{...}{Other study settings accepted by the API, such as
-\code{device_requirement}, \code{balance}, \code{census_matched}, \code{min_approval_rate} or
-\code{screen_out_minutes}.}
+\code{device_requirement}, \code{balance}, \code{census_matched}, \code{min_approval_rate},
+\code{screen_out_minutes}, \code{allowlist_group_ids} (only these groups),
+\code{blocklist_group_ids} (never these groups) or \code{excluded_study_ids} (skip
+people who took these studies). Give ID lists as \code{list(...)} so a single ID
+is still sent as a list.}
 }
 \value{
 The new study as a one-row data frame, including its \code{cost}.

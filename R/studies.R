@@ -52,8 +52,11 @@ pv_study <- function(study) {
 #'   `children_in_household`; the study form on populiva.com lists their
 #'   values.
 #' @param ... Other study settings accepted by the API, such as
-#'   `device_requirement`, `balance`, `census_matched`, `min_approval_rate` or
-#'   `screen_out_minutes`.
+#'   `device_requirement`, `balance`, `census_matched`, `min_approval_rate`,
+#'   `screen_out_minutes`, `allowlist_group_ids` (only these groups),
+#'   `blocklist_group_ids` (never these groups) or `excluded_study_ids` (skip
+#'   people who took these studies). Give ID lists as `list(...)` so a single ID
+#'   is still sent as a list.
 #' @return The new study as a one-row data frame, including its `cost`.
 #' @export
 #' @examples

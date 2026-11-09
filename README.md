@@ -75,14 +75,24 @@ Rejections need one of Populiva's reasons. Participants see it and can appeal.
 
 ## Longitudinal studies
 
-Put a wave's completers in a group and tell them the next wave is coming. When you set up the next wave on populiva.com, limit it to that group.
+Put a wave's completers in a group, tell them the next wave is coming, and open the next wave to that group only:
 
 ```r
 wave1 <- pv_submissions(study, status = "approved")
 group <- pv_create_group("Wave 1 completers")
 pv_add_to_group(group, wave1$participant_id)
 pv_message("Wave 2 opens tomorrow at 9am ET.", study = study, audience = "approved")
+
+wave2 <- pv_create_study(
+  title = "Decisions under uncertainty: part 2",
+  description = "The second part of the study you took last week.",
+  external_url = "https://myuni.qualtrics.com/jfe/form/SV_def456",
+  estimated_minutes = 10, reward = 2, places = nrow(wave1),
+  allowlist_group_ids = list(group$id)
+)
 ```
+
+To keep people out instead, use `blocklist_group_ids` for groups or `excluded_study_ids` for everyone who took earlier studies.
 
 ## Functions
 
